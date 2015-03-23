@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+    Options +FollowSymlinks
+    RewriteEngine On
+
+    # Explicitly disable rewriting for front controllers
+    RewriteRule ^rest.php - [L]
+
+    # Explicitly disable rewriting for existing files
+    RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^.*$ /pragmatic/zlatinTest/rest.php [QSA,L]
+</IfModule>
