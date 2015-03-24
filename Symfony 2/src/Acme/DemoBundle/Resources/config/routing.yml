@@ -1,0 +1,21 @@
+_welcome:
+    path:     /
+    defaults: { _controller: AcmeDemoBundle:Welcome:index }
+
+_demo_secured:
+    resource: "@AcmeDemoBundle/Controller/SecuredController.php"
+    type:     annotation
+
+_demo:
+    resource: "@AcmeDemoBundle/Controller/DemoController.php"
+    type:     annotation
+    prefix:   /demo
+
+_welcome_about:
+    path:     /about
+    defaults: { _controller: AcmeDemoBundle:About:index }
+
+
+_demo_secured_hello_admin_edit:
+     path:     /hello/admin/edit
+     defaults: { _controller: AcmeDemoBundle:Secured:edit }
